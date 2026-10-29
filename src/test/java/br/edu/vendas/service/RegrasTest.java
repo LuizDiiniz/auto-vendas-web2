@@ -17,10 +17,10 @@ class RegrasTest {
 
     @Test
     void caminhoMultinivel() {
-        Categoria raiz = c(1, "Perfumaria", null),
-                filha = c(2, "Masculinos", raiz),
-                neta = c(3, "Amadeirados", filha);
-        assertEquals("Perfumaria > Masculinos > Amadeirados", neta.getCaminho());
+        Categoria raiz = c(1, "Passeio", null),
+                filha = c(2, "SUV", raiz),
+                neta = c(3, "SUV compacto", filha);
+        assertEquals("Passeio > SUV > SUV compacto", neta.getCaminho());
         assertEquals(2, neta.getNivel());
     }
 

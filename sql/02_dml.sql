@@ -1,3 +1,4 @@
+SET ROLE autovendas;
 -- Carga inicial para um banco novo. Dados e preços inteiramente fictícios.
 BEGIN;
 INSERT INTO tb_marca(nome,descricao,ativo) VALUES
