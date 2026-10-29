@@ -4,7 +4,7 @@ Projeto acadêmico de Programação WEB 2: CRUD de marcas, categorias hierárqui
 
 ## Integrantes
 
-**Preencher antes da entrega:** nome completo do aluno e dos demais integrantes, se houver.
+- Luiz Guilherme Diniz
 
 ## O que o sistema faz
 
@@ -106,6 +106,10 @@ Os testes cobrem a hierarquia de categorias, restrições dos veículos, preços
 
 As imagens do README são capturas da versão de carros. A ilustração usada nos testes de upload é demonstrativa e não é uma fotografia de um veículo real.
 
+## Repositório da entrega
+
+https://github.com/LuizDiiniz/auto-vendas-web2
+
 ## Publicar no GitHub do integrante
 
 Este pacote não foi publicado em nenhuma conta. Use o repositório do aluno que vai entregar, não o repositório do projeto anterior.
@@ -115,16 +119,14 @@ O ZIP inclui `historico.bundle`, com commits reais feitos durante esta preparaç
 ```sh
 git clone historico.bundle ../auto-vendas-github
 cd ../auto-vendas-github
-git remote set-url origin https://github.com/USUARIO_DO_COLEGA/REPOSITORIO.git
+git remote set-url origin https://github.com/LuizDiiniz/auto-vendas-web2.git
 ```
 
-Crie previamente um repositório **vazio** na conta do colega. Substitua os valores da URL. Antes do envio, preencha os integrantes no README, configure o nome e email Git do aluno e registre essa alteração:
+O destino é o repositório do Luiz. O README já está identificado. Para futuros commits feitos pelo próprio aluno, configure seu nome e email no Git:
 
 ```sh
-git config user.name "NOME DO ALUNO"
+git config user.name "Luiz Guilherme Diniz"
 git config user.email "EMAIL DO GITHUB DO ALUNO"
-git add README.md
-git commit -m "Identifica integrantes da atividade"
 git push -u origin main
 ```
 
