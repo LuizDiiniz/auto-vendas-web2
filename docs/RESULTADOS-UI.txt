@@ -1,0 +1,11 @@
+OK página inicial
+OK criar marca
+OK editar marca
+OK marca duplicada
+OK excluir marca sem vínculo e bloquear marca vinculada
+OK hierarquia e proteção de exclusão
+OK seis veículos da carga inicial
+OK cadastro, enum, upload, preview e imagem HTTP 200
+OK edição dos campos automotivos, persistência após recarga e conservação da foto
+OK exclusão de veículo
+OK sem erros JavaScript e captura móvel
