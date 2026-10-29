@@ -113,6 +113,11 @@ public class CatalogoService {
                         atual.setNome(p.getNome());
                         atual.setDescricao(p.getDescricao());
                         atual.setPreco(p.getPreco());
+                        atual.setAnoModelo(p.getAnoModelo());
+                        atual.setQuilometragem(p.getQuilometragem());
+                        atual.setCombustivel(p.getCombustivel());
+                        atual.setCambio(p.getCambio());
+                        atual.setCor(p.getCor());
                         atual.setQuantidadeEstoque(p.getQuantidadeEstoque());
                         atual.setMarca(m);
                         atual.setCategoria(c);
@@ -133,7 +138,7 @@ public class CatalogoService {
                                     .getSingleResult()
                             > 0)
                         throw new RegraException(
-                                "Marca vinculada a produtos. Desative-a ou altere os produtos"
+                                "Marca vinculada a veículos. Desative-a ou altere os veículos"
                                     + " primeiro.");
                     em.remove(m);
                     return null;
@@ -162,7 +167,7 @@ public class CatalogoService {
                                             Long.class)
                                     .setParameter("id", id)
                                     .getSingleResult()
-                            > 0) throw new RegraException("Categoria vinculada a produtos.");
+                            > 0) throw new RegraException("Categoria vinculada a veículos.");
                     em.remove(c);
                     return null;
                 });

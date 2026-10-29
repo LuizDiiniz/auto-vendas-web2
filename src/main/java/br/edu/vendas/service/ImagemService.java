@@ -12,7 +12,7 @@ public class ImagemService {
 
     public Path diretorio() {
         String v = System.getenv("UPLOAD_DIR");
-        return Path.of(v == null ? System.getProperty("user.home") + "/vendas-uploads" : v)
+        return Path.of(v == null ? System.getProperty("user.home") + "/autovendas-uploads" : v)
                 .toAbsolutePath()
                 .normalize();
     }

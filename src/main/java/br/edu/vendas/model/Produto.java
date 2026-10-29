@@ -41,6 +41,48 @@ public class Produto extends Entidade {
     @Column(name = "caminho_imagem", length = 100)
     private String caminhoImagem;
 
+    @NotNull(message = "Informe o ano/modelo.")
+    @Min(value = 1886, message = "Ano/modelo deve ser a partir de 1886.")
+    @Max(value = 2100, message = "Ano/modelo inválido.")
+    @Column(name = "ano_modelo", nullable = false)
+    private Integer anoModelo;
+
+    @NotNull(message = "Informe a quilometragem.")
+    @Min(value = 0, message = "Quilometragem não pode ser negativa.")
+    @Column(nullable = false)
+    private Integer quilometragem = 0;
+
+    @NotNull(message = "Selecione o combustível.")
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private Combustivel combustivel;
+
+    @NotNull(message = "Selecione o câmbio.")
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private Cambio cambio;
+
+    @Size(max = 40)
+    @Column(length = 40)
+    private String cor;
+
+    @AssertTrue(message = "Ano/modelo não pode ultrapassar o próximo ano.")
+    @Transient
+    public boolean isAnoModeloValido() {
+        return anoModelo == null || anoModelo <= java.time.Year.now().getValue() + 1;
+    }
+
+    public Integer getAnoModelo() { return anoModelo; }
+    public void setAnoModelo(Integer valor) { anoModelo = valor; }
+    public Integer getQuilometragem() { return quilometragem; }
+    public void setQuilometragem(Integer valor) { quilometragem = valor; }
+    public Combustivel getCombustivel() { return combustivel; }
+    public void setCombustivel(Combustivel valor) { combustivel = valor; }
+    public Cambio getCambio() { return cambio; }
+    public void setCambio(Cambio valor) { cambio = valor; }
+    public String getCor() { return cor; }
+    public void setCor(String valor) { cor = valor; }
+
     public String getNome() {
         return nome;
     }

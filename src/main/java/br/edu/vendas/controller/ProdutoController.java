@@ -22,6 +22,10 @@ public class ProdutoController implements Serializable {
     private byte[] pendente;
     private String nomePendente;
 
+    public Combustivel[] getCombustiveis() { return Combustivel.values(); }
+
+    public Cambio[] getCambios() { return Cambio.values(); }
+
     public Produto getEditando() {
         return editando;
     }
@@ -121,7 +125,7 @@ public class ProdutoController implements Serializable {
             if (nova != null) imagens.apagar(antiga);
             novo();
             atualizar();
-            Mensagens.sucesso("Produto salvo com sucesso.");
+            Mensagens.sucesso("Veículo salvo com sucesso.");
         } catch (Exception e) {
             if (nova != null) imagens.apagar(nova);
             editando.setCaminhoImagem(antiga);
@@ -134,7 +138,7 @@ public class ProdutoController implements Serializable {
             String arquivo = service.excluirProduto(p.getId());
             imagens.apagar(arquivo);
             atualizar();
-            Mensagens.sucesso("Produto excluído.");
+            Mensagens.sucesso("Veículo excluído.");
         } catch (Exception e) {
             Mensagens.erro(e);
         }

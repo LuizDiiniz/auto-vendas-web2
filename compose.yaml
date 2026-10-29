@@ -2,16 +2,16 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: vendas
-      POSTGRES_USER: vendas
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-vendas}
+      POSTGRES_DB: autovendas
+      POSTGRES_USER: autovendas
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-autovendas}
     ports:
       - "5432:5432"
     volumes:
       - banco:/var/lib/postgresql/data
       - ./sql:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U vendas -d vendas"]
+      test: ["CMD-SHELL", "pg_isready -U autovendas -d autovendas"]
       interval: 5s
       timeout: 5s
       retries: 15
@@ -21,9 +21,9 @@ services:
       db:
         condition: service_healthy
     environment:
-      DB_URL: jdbc:postgresql://db:5432/vendas
-      DB_USER: vendas
-      DB_PASSWORD: ${DB_PASSWORD:-vendas}
+      DB_URL: jdbc:postgresql://db:5432/autovendas
+      DB_USER: autovendas
+      DB_PASSWORD: ${DB_PASSWORD:-autovendas}
       UPLOAD_DIR: /usr/local/tomcat/uploads
     ports:
       - "8080:8080"

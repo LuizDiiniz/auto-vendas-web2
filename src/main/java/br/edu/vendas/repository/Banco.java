@@ -16,9 +16,9 @@ public class Banco {
             Map<String, Object> p = new HashMap<>();
             p.put(
                     "jakarta.persistence.jdbc.url",
-                    env("DB_URL", "jdbc:postgresql://localhost:5432/vendas"));
-            p.put("jakarta.persistence.jdbc.user", env("DB_USER", "vendas"));
-            p.put("jakarta.persistence.jdbc.password", env("DB_PASSWORD", "vendas"));
+                    env("DB_URL", "jdbc:postgresql://localhost:5432/autovendas"));
+            p.put("jakarta.persistence.jdbc.user", env("DB_USER", "autovendas"));
+            p.put("jakarta.persistence.jdbc.password", env("DB_PASSWORD", "autovendas"));
             p.put("jakarta.persistence.jdbc.driver", "org.postgresql.Driver");
             p.put("hibernate.connection.pool_size", Integer.parseInt(env("DB_POOL_SIZE", "5")));
             factory = Persistence.createEntityManagerFactory("my_persistence_unit", p);

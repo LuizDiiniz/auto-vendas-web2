@@ -2,14 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.edu.iftm</groupId>
-    <artifactId>ppw2-java-web-maven</artifactId>
+    <artifactId>auto-vendas</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>ppw2-java-web-maven-1.0</name>
+    <name>AutoVendas - Catalogo de veiculos</name>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>11.0.0</jakartaee>
+        <lombok.version>1.18.42</lombok.version>
     </properties>
     
     <dependencies>
@@ -48,7 +49,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.36</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
     <dependency><groupId>org.hibernate.orm</groupId><artifactId>hibernate-core</artifactId><version>7.0.2.Final</version></dependency>
@@ -57,21 +58,20 @@
 </dependencies>
     
     <build>
-        <finalName>vendas</finalName><plugins>
+        <finalName>autovendas</finalName><plugins>
 <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.12.1</version>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <release>17</release>
                     <!-- Processador para Lombok -->
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.36</version>
+                            <version>${lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
