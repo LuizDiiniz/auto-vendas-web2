@@ -1,0 +1,13 @@
+target/
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+.env
+uploads/
+*.log
+.DS_Store
+historico.bundle
+node_modules/
